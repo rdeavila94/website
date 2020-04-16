@@ -1,0 +1,10 @@
+.section-header {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: $color-black;
+  font-size: xx-large; //TODO: clean this up
+  color: $color-white;
+  &__terminal {
+    margin: 10rem 10rem;
+  }
+}
