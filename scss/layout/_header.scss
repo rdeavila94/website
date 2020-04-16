@@ -1,12 +1,13 @@
 .section-header {
   min-height: 100vh;
   min-width: 100vw;
-  background-color: $color-black;
+  background-color: rgba($color-black, 0.9);
   font-size: xx-large; //TODO: clean this up
   color: $color-white;
   &__terminal {
     margin: 10rem 10rem;
-    font-family: monospace;
+    font-family:  'Lucida Grande', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: .1rem;
   }
 }
 
