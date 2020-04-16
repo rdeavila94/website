@@ -13,4 +13,4 @@ function textAnimation(el, content, speed=100) {
   recursiveAnimate(el, content, 0);
 }
 
-textAnimation(terminal, richardDeAvila);
+setTimeout(() => textAnimation(terminal, richardDeAvila), 500);
