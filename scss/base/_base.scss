@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  /*border: black solid thin;*/
+  box-sizing: inherit;
+}
+
+html {
+  //This essentially defines what one rem is, which is 10px
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color-white;
+}
