@@ -1,0 +1,5 @@
+@function grid-size($col) {
+  @return calc(
+    (100% - (#{$gutter-horizontal} * (#{$grid-columns} - 1))) / #{$grid-columns} * #{$col} + (#{$col} - 1) * #{$gutter-horizontal}
+  );
+}
