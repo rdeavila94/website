@@ -1,0 +1,26 @@
+// Neaten this button
+.btn {
+  border-radius: 2rem;
+  display: inline-block;
+  font-family: $font-primary;
+  box-shadow: 0 .2rem 1rem .1rem rgba($color-grey, 0.5);
+  cursor: pointer;
+  transition: all .1s;
+  &:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 .4rem 1.5rem .1rem rgba($color-grey, 0.5);
+  }
+
+  &:active {
+    transform: translateY(.1rem);
+    box-shadow: 0 0rem .5rem 0rem rgba($color-grey, 0.5);
+  }
+
+  &--large {
+    padding: 2rem 5rem;
+  }
+  &--black {
+    background-color: $color-black;
+    color: white;
+  }
+}

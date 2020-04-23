@@ -15,4 +15,9 @@
   min-width: 100vw;
   min-height: 100vh;
   padding: 5rem 10rem;
+
+  &__center {
+    text-align: center;
+    font-size: 3rem;
+  }
 }

@@ -1,3 +1,22 @@
 .inline-block {
   display: inline-block;
 }
+
+@each $var in ("t" "b" "l" "r") {
+  @for $i from 1 through 5 {
+    .m#{$var}-#{$i} {
+      @if $var == 't' {
+        margin-top: #{$i}rem;
+      }
+      @if $var == 'b' {
+        margin-bottom: #{$i}rem;
+      }
+      @if $var == 'l' {
+        margin-left: #{$i}rem;
+      }
+      @if $var == 'r' {
+        margin-right: #{$i}rem;
+      }
+    }
+  }
+}
