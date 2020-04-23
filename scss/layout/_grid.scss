@@ -2,6 +2,8 @@
   max-width: $row-width;
   margin: 0 auto;
 
+  @include clearfix;
+
   @include respond(tab-land) {
     max-width: 95vw;
   }

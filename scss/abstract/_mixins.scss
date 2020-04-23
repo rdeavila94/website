@@ -1,3 +1,11 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 @mixin respond($breakpoint) {
   @if $breakpoint == tight {
     @media (max-width: 28.75em) {
