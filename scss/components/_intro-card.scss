@@ -1,0 +1,19 @@
+.intro-card {
+  font-family: $font-primary;
+
+  &__line {
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    &--big {
+      font-size: 5rem;
+    }
+    &--md {
+      font-size: 4.5rem;
+    }
+    &--sm {
+      font-size: 4rem;
+    }
+  }
+}
