@@ -1,0 +1,17 @@
+.section-header {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgba($color-black, 0.9);
+  color: $color-white;
+  &__terminal {
+    margin: 10rem 10rem;
+    font-family: $font-primary;
+    letter-spacing: 0.1rem;
+    font-size: 7rem; //TODO: clean this up
+  }
+}
+
+.section-intro {
+  min-width: 100vw;
+  min-height: 100vh;
+}
