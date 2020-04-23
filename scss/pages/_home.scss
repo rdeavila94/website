@@ -3,15 +3,16 @@
   min-width: 100vw;
   background-color: rgba($color-black, 0.9);
   color: $color-white;
+  padding: 10rem 10rem;
   &__terminal {
-    margin: 10rem 10rem;
-    font-family: $font-primary;
+    font-family: $font-terminal;
     letter-spacing: 0.1rem;
-    font-size: 7rem; //TODO: clean this up
+    font-size: 7rem;
   }
 }
 
 .section-intro {
   min-width: 100vw;
   min-height: 100vh;
+  padding: 5rem 10rem;
 }
