@@ -21,3 +21,28 @@
     font-size: 3rem;
   }
 }
+
+.section-service {
+  min-width: 100vw;
+  min-height: 100vh;
+  color: $color-white;
+  display: flex;
+  padding: 5rem 10rem;
+
+  &--first {
+    background-image: linear-gradient(
+      to right bottom,
+      $color-first,
+      lighten($color-first, 25)
+    );
+  }
+
+  &__content {
+    flex-basis: 65%;
+    display: flex;
+  }
+
+  &__image {
+    flex-basis: 35%;
+  }
+}

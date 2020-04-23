@@ -1,0 +1,15 @@
+.content-box {
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: $font-primary;
+
+  &__top {
+    text-align: center;
+    font-size: 5rem;
+  }
+
+  &__bottom {
+    margin-top: auto;
+    font-size: 3rem;
+  }
+}
