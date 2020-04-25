@@ -27,15 +27,27 @@
   min-height: 100vh;
   color: $color-white;
   display: flex;
-  padding: 5rem 10rem;
+  padding: 10rem 10rem;
 
-  &--first {
+  &--blue {
     background-color: $color-first;
+  }
+
+  &--green {
+    background-color:#00af00;
+  }
+
+  &--red {
+    background-color: red;
   }
 
   &__content {
     flex-basis: 65%;
     display: flex;
+
+    &--right {
+      text-align: right;
+    }
   }
 
   &__image {
