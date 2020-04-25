@@ -14,7 +14,7 @@
   }
 }
 
-@keyframes come-in-left {
+@keyframes fade-in-left {
   0%{
     opacity: 0;
     transform: translateX(-5rem);
@@ -26,16 +26,24 @@
   }
 }
 
-.fade-in-left {
-  animation: come-in-left .5s;
-  animation-fill-mode: backwards;
-  animation-timing-function: ease-in-out;
+@keyframes fade-in-top {
+  0%{
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@for $i from 1 to 10 {
-  .animate-delay-#{$i} {
-    animation-delay: $i;
-  }
+.fade-in-left {
+  animation: fade-in-left backwards ease-in-out;
+}
+
+.fade-in-top {
+  animation: fade-in-top backwards ease-out;
 }
 
 .animation-blink {
@@ -46,6 +54,14 @@
   animation-iteration-count: infinite;
 }
 
-.animation-quick {
-  animation-duration: 1s;
+@for $i from 1 through 5 {
+  .animation-delay-#{$i} {
+    animation-delay: #{$i/2.0}s;
+  }
+}
+
+@for $i from 1 through 5 {
+  .animation-duration-#{$i} {
+    animation-duration: #{$i/2.0}s;
+  }
 }

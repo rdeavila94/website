@@ -25,6 +25,7 @@ const $service = document.querySelector('#service-start');
 const nameAnimation = new AnimatedElement(document.querySelector('.intro-card__line--big'), 'fade-in-left', 'u-hidden');
 const developerAnimation = new AnimatedElement(document.querySelector('.intro-card__line--md'), 'fade-in-left', 'u-hidden');
 const languagesAnimation = new AnimatedElement(document.querySelector('.intro-card__line--sm'), 'fade-in-left', 'u-hidden');
+const buttonAnimation = new AnimatedElement($button, 'fade-in-top', 'u-hidden');
 
 const terminalMessage = `start "Richard De Avila"`;
 let windowHeight = window.innerHeight;
@@ -35,6 +36,8 @@ const animationMargin = 100;
 let nameTriggered = false;
 let developerTriggered = false;
 let languagesTriggered = false;
+let buttonTriggered = false;
+
 // We have to use a named function in order to have the ability to remove the handler
 function onscroll(e) {
 
@@ -52,8 +55,13 @@ function onscroll(e) {
     languagesTriggered = true;
   }
 
+  if (!buttonTriggered && buttonAnimation.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+    buttonAnimation.animate();
+    buttonTriggered = true;
+  }
+
   // if the last animation has kicked off, remove the event listener
-  if (languagesTriggered) {
+  if (buttonTriggered) {
     document.removeEventListener('scroll', onscroll);
   }
 }
