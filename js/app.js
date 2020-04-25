@@ -1,5 +1,7 @@
 const $terminal = document.querySelector('#terminal');
 const $body = document.querySelector('#body');
+const $button = document.querySelector('#button');
+const $service = document.querySelector('#service-start');
 
 const richardDeAvila = `start "Richard De Avila"`;
 
@@ -9,22 +11,21 @@ function textAnimation({ el, content, speed = 100 }, callback) {
       el.textContent = el.textContent + content.charAt(position);
       setTimeout(() => recursiveAnimate(++position), speed);
     } else {
-      callback();
+      if (callback) callback();
     }
   };
 
   recursiveAnimate(0);
 }
 
-let counter = 1;
 
-function smoothScroll($destination) {
-  console.log('inside');
-  if (window.pageYOffset >= $destination.offsetHeight) {
+// TODO: Make counter function variable and fix overscroll
+function smoothScroll($destination, counter=0) {
+  if ($destination.getBoundingClientRect().top <= 0) {
     return;
   }
   window.scrollTo(0, window.pageYOffset + counter++ / 10);
-  setTimeout(() => smoothScroll($destination), 1);
+  setTimeout(() => smoothScroll($destination, counter), 1);
 }
 
 function pressEnter($line) {
@@ -33,7 +34,7 @@ function pressEnter($line) {
 
 setTimeout(
   () =>
-    textAnimation({ el: $terminal, content: richardDeAvila, speed: 50 }, () =>
+    textAnimation({ el: $terminal, content: richardDeAvila, speed: 10 }, () =>
       setTimeout(() => {
         pressEnter($terminal);
         setTimeout(() => smoothScroll($body), 250);
@@ -41,3 +42,7 @@ setTimeout(
     ),
   500
 );
+
+$button.addEventListener('click', (e) =>{
+  smoothScroll($service);
+})

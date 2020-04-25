@@ -30,11 +30,7 @@
   padding: 5rem 10rem;
 
   &--first {
-    background-image: linear-gradient(
-      to right bottom,
-      $color-first,
-      lighten($color-first, 25)
-    );
+    background-color: $color-first;
   }
 
   &__content {

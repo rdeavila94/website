@@ -2,14 +2,18 @@
   display: flex;
   flex-flow: column nowrap;
   font-family: $font-primary;
-
   &__top {
     text-align: center;
-    font-size: 5rem;
+    font-size: 7rem;
+    letter-spacing: .1rem;
+    line-height: 8rem;
+    font-weight: bold;
   }
 
   &__bottom {
     margin-top: auto;
-    font-size: 3rem;
+    font-size: 4rem;
+    letter-spacing: .1rem;
+    line-height: 4rem;
   }
 }
