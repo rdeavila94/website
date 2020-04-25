@@ -6,7 +6,7 @@
   &__terminal {
     font-family: $font-terminal;
     letter-spacing: 0.1rem;
-    font-size: 7rem;
+    font-size: $font-size-header;
   }
 }
 
@@ -16,7 +16,7 @@
 
   &__center {
     text-align: center;
-    font-size: 3rem;
+    font-size: $font-size-paragraph;
   }
 }
 

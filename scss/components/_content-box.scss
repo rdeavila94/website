@@ -4,7 +4,7 @@
   font-family: $font-primary;
   &__top {
     text-align: center;
-    font-size: 7rem;
+    font-size: $font-size-header;
     letter-spacing: .1rem;
     line-height: 8rem;
     font-weight: bold;
@@ -12,7 +12,7 @@
 
   &__bottom {
     margin-top: auto;
-    font-size: 4rem;
+    font-size: $font-size-paragraph;
     letter-spacing: .1rem;
     line-height: 4rem;
   }

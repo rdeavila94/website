@@ -7,13 +7,13 @@
       margin-bottom: 1rem;
     }
     &--big {
-      font-size: 5rem;
+      font-size: $font-size-header;
     }
     &--md {
-      font-size: 4.5rem;
+      font-size: $font-size-large;
     }
     &--sm {
-      font-size: 4rem;
+      font-size: $font-size-paragraph;
     }
   }
 }
