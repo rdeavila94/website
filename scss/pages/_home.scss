@@ -13,10 +13,37 @@
 .section-intro {
   min-width: 100vw;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  &__top {
+    display: flex;
+  }
 
-  &__center {
+  &__content {
+    flex-basis: 65%;
+    display: flex;
+  }
+
+  &__pic {
+    flex-basis: 35%;
+    display: flex;
+    img {
+      border-radius: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__bottom {
     text-align: center;
     font-size: $font-size-paragraph;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  &__center {
+    align-self: center;
+    margin: 0 auto;
   }
 }
 
@@ -31,7 +58,7 @@
   }
 
   &--green {
-    background-color:#00af00;
+    background-color: #00af00;
   }
 
   &--red {
