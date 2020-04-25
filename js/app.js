@@ -22,18 +22,40 @@ const $terminal = document.querySelector('#terminal');
 const $body = document.querySelector('#body');
 const $button = document.querySelector('#button');
 const $service = document.querySelector('#service-start');
+const nameAnimation = new AnimatedElement(document.querySelector('.intro-card__line--big'), 'fade-in-left', 'u-hidden');
+const developerAnimation = new AnimatedElement(document.querySelector('.intro-card__line--md'), 'fade-in-left', 'u-hidden');
+const languagesAnimation = new AnimatedElement(document.querySelector('.intro-card__line--sm'), 'fade-in-left', 'u-hidden');
 
-const message = `start "Richard De Avila"`;
+const terminalMessage = `start "Richard De Avila"`;
 let windowHeight = window.innerHeight;
 
 // this will be used in case we want to kick off an animation deeper into the scroll
 const animationMargin = 100;
 
+let nameTriggered = false;
+let developerTriggered = false;
+let languagesTriggered = false;
 // We have to use a named function in order to have the ability to remove the handler
 function onscroll(e) {
 
+  //TODO: replace these with preidcates
+  if (!nameTriggered && nameAnimation.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+    nameAnimation.animate();
+    nameTriggered = true;
+  }
+  if (!developerTriggered && developerAnimation.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+    developerAnimation.animate();
+    developerTriggered = true;
+  }
+  if (!languagesTriggered && languagesAnimation.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+    languagesAnimation.animate();
+    languagesTriggered = true;
+  }
+
   // if the last animation has kicked off, remove the event listener
-  document.removeEventListener('scroll', onscroll);
+  if (languagesTriggered) {
+    document.removeEventListener('scroll', onscroll);
+  }
 }
 
 document.addEventListener('scroll', onscroll);
@@ -75,7 +97,7 @@ function pressEnter($line) {
 
 setTimeout(
   () =>
-    textAnimation({ el: $terminal, content: message, speed: 10 }, () =>
+    textAnimation({ el: $terminal, content: terminalMessage, speed: 10 }, () =>
       setTimeout(() => {
         pressEnter($terminal);
         setTimeout(() => smoothScroll($body), 250);

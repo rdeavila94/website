@@ -2,6 +2,10 @@
   display: inline-block;
 }
 
+.u-hidden {
+  visibility: hidden;
+}
+
 @each $var in ("t" "b" "l" "r") {
   @for $i from 1 through 5 {
     .m#{$var}-#{$i} {

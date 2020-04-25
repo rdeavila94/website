@@ -14,6 +14,30 @@
   }
 }
 
+@keyframes come-in-left {
+  0%{
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  animation: come-in-left .5s;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in-out;
+}
+
+@for $i from 1 to 10 {
+  .animate-delay-#{$i} {
+    animation-delay: $i;
+  }
+}
+
 .animation-blink {
   animation-name: blink;
 }
