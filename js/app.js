@@ -50,12 +50,13 @@ const animationMargin = 100;
 
 // We have to use a named function in order to have the ability to remove the handler
 function onscroll(e) {
-  animatedElements.forEach((ael, index) => {
-    if (ael.element.getBoundingClientRect().top < windowHeight - animationMargin) {
-      ael.animate();
-      animatedElements.splice(index, 1);
+  for (let i = 0; i < animatedElements.length; i++) {
+    if (animatedElements[i].element.getBoundingClientRect().top < windowHeight - animationMargin) {
+      animatedElements[i].animate();
+      animatedElements.splice(i, 1);
+      i--;
     }
-  });
+  }
   if(animatedElements.length < 1) {
     document.removeEventListener('scroll', onscroll);
   }
