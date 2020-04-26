@@ -99,6 +99,7 @@
     flex-basis: 50%;
     flex-direction: column;
   }
+
   &__contact {
     display: flex;
     flex-basis: 50%;
@@ -111,8 +112,17 @@
   }
 
   &__paragraph {
-    font-size: 1rem;
+    margin-top: 3rem;
+    font-size: $font-size-small;
     display: flex;
   }
 
+  &__copyright {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+  }
 }
