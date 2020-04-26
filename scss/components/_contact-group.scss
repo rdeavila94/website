@@ -1,0 +1,23 @@
+.contact-group {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-evenly;
+
+  &__element {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+  }
+
+  &__icon {
+    fill: currentColor;
+    color: $color-white;
+    height: 5rem;
+    width: 5rem;
+    align-content: center;
+    &:hover {
+      filter: drop-shadow(0 0 1rem rgba($color-white, 0.9));
+    }
+  }
+}

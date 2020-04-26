@@ -86,3 +86,33 @@
     }
   }
 }
+
+.section-footer {
+  display: flex;
+  flex-direction: row;
+  background-color: $color-black;
+  color: $color-white;
+  font-family: $font-primary;
+
+  &__about {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+  }
+  &__contact {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+  }
+
+  &__header {
+    font-size: 3rem;
+    display: block;
+  }
+
+  &__paragraph {
+    font-size: 1rem;
+    display: flex;
+  }
+
+}
