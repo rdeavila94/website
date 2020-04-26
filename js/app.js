@@ -22,9 +22,21 @@ const $terminal = document.querySelector('#terminal');
 const $body = document.querySelector('#body');
 const $button = document.querySelector('#button');
 const $service = document.querySelector('#service-start');
-const nameAnimation = new AnimatedElement(document.querySelector('.intro-card__line--big'), 'fade-in-left', 'u-hidden');
-const developerAnimation = new AnimatedElement(document.querySelector('.intro-card__line--md'), 'fade-in-left', 'u-hidden');
-const languagesAnimation = new AnimatedElement(document.querySelector('.intro-card__line--sm'), 'fade-in-left', 'u-hidden');
+const nameAnimation = new AnimatedElement(
+  document.querySelector('.intro-card__line--big'),
+  'fade-in-left',
+  'u-hidden'
+);
+const developerAnimation = new AnimatedElement(
+  document.querySelector('.intro-card__line--md'),
+  'fade-in-left',
+  'u-hidden'
+);
+const languagesAnimation = new AnimatedElement(
+  document.querySelector('.intro-card__line--sm'),
+  'fade-in-left',
+  'u-hidden'
+);
 const buttonAnimation = new AnimatedElement($button, 'fade-in-top', 'u-hidden');
 
 const terminalMessage = `start "Richard De Avila"`;
@@ -40,22 +52,37 @@ let buttonTriggered = false;
 
 // We have to use a named function in order to have the ability to remove the handler
 function onscroll(e) {
-
   //TODO: replace these with preidcates
-  if (!nameTriggered && nameAnimation.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+  if (
+    !nameTriggered &&
+    nameAnimation.element.getBoundingClientRect().top <
+      windowHeight - animationMargin
+  ) {
     nameAnimation.animate();
     nameTriggered = true;
   }
-  if (!developerTriggered && developerAnimation.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+  if (
+    !developerTriggered &&
+    developerAnimation.element.getBoundingClientRect().top <
+      windowHeight - animationMargin
+  ) {
     developerAnimation.animate();
     developerTriggered = true;
   }
-  if (!languagesTriggered && languagesAnimation.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+  if (
+    !languagesTriggered &&
+    languagesAnimation.element.getBoundingClientRect().top <
+      windowHeight - animationMargin
+  ) {
     languagesAnimation.animate();
     languagesTriggered = true;
   }
 
-  if (!buttonTriggered && buttonAnimation.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+  if (
+    !buttonTriggered &&
+    buttonAnimation.element.getBoundingClientRect().top <
+      windowHeight - animationMargin
+  ) {
     buttonAnimation.animate();
     buttonTriggered = true;
   }
@@ -90,12 +117,21 @@ function textAnimation({ el, content, speed = 100 }, callback) {
   recursiveAnimate(0);
 }
 
-// TODO: Make counter function variable and fix overscroll
+// TODO: Clean up this function (make more modular)
 function smoothScroll($destination, counter = 0) {
-  if ($destination.getBoundingClientRect().top <= 0) {
+  const top = $destination.getBoundingClientRect().top;
+  if (top <= 0) {
     return;
   }
-  window.scrollTo(0, window.pageYOffset + counter++ / 10);
+  if (counter > top) {
+    if (top < 10) {
+      window.scrollTo(0, window.pageYOffset + top);
+    } else {
+      window.scrollTo(0, window.pageYOffset + top / 10);
+    }
+  } else {
+    window.scrollTo(0, window.pageYOffset + counter++ / 10);
+  }
   setTimeout(() => smoothScroll($destination, counter), 1);
 }
 
