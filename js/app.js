@@ -24,23 +24,27 @@ const $button = document.querySelector('#button');
 const $service = document.querySelector('#service-start');
 
 const animatedElements = [];
-const nameAnimation = animatedElements.push(new AnimatedElement(
-  document.querySelector('.intro-card__line--big'),
-  'fade-in-left',
-  'u-hidden'
-));
-const developerAnimation = animatedElements.push(new AnimatedElement(
-  document.querySelector('.intro-card__line--md'),
+
+animatedElements.push(new AnimatedElement(
+  document.querySelector('.intro-card'),
   'fade-in-left',
   'u-hidden'
 ));
 
-const languagesAnimation = animatedElements.push(new AnimatedElement(
-  document.querySelector('.intro-card__line--sm'),
-  'fade-in-left',
-  'u-hidden'
-));
-const buttonAnimation = animatedElements.push(new AnimatedElement($button, 'fade-in-top', 'u-hidden'));
+animatedElements.push(new AnimatedElement($button, 'fade-in-top', 'u-hidden'));
+
+document.querySelectorAll('.content-box__bottom').forEach(el => {
+  animatedElements.push(new AnimatedElement(el, 'shoot-up', 'u-hidden'));
+});
+
+document.querySelectorAll('.section-service__content:not(.section-service__content--right) .content-box__top').forEach(el => {
+  animatedElements.push(new AnimatedElement(el, 'shoot-in-left', 'u-hidden'));
+});
+
+document.querySelectorAll('.section-service__content--right .content-box__top').forEach(el => {
+  animatedElements.push(new AnimatedElement(el, 'shoot-in-right', 'u-hidden'));
+})
+
 
 const terminalMessage = `start "Richard De Avila"`;
 let windowHeight = window.innerHeight;
