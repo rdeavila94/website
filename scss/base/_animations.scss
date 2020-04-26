@@ -38,6 +38,49 @@
   }
 }
 
+@keyframes shoot-in-left {
+  0%{
+    transform: translateX(-100vw);
+  }
+
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes shoot-in-right {
+  0%{
+    transform: translateX(100vw);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes shoot-up {
+  0%{
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shoot-in-left {
+  animation: shoot-in-left backwards linear;
+}
+
+.shoot-in-right {
+  animation: shoot-in-right backwards linear;
+}
+
+.shoot-up {
+  animation: shoot-up linear backwards;
+}
+
 .fade-in-left {
   animation: fade-in-left backwards ease-in-out;
 }
