@@ -55,17 +55,13 @@
   display: flex;
   overflow: hidden;
 
-  &--blue {
-    background-color: $color-first;
+  @each $var in $colors {
+    $i: index($colors, $var);
+    &--#{$i} {
+      background-color: $var;
+    }
   }
 
-  &--green {
-    background-color: #00af00;
-  }
-
-  &--red {
-    background-color: red;
-  }
 
   &__content {
     flex-basis: 65%;
