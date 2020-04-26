@@ -22,22 +22,25 @@ const $terminal = document.querySelector('#terminal');
 const $body = document.querySelector('#body');
 const $button = document.querySelector('#button');
 const $service = document.querySelector('#service-start');
-const nameAnimation = new AnimatedElement(
+
+const animatedElements = [];
+const nameAnimation = animatedElements.push(new AnimatedElement(
   document.querySelector('.intro-card__line--big'),
   'fade-in-left',
   'u-hidden'
-);
-const developerAnimation = new AnimatedElement(
+));
+const developerAnimation = animatedElements.push(new AnimatedElement(
   document.querySelector('.intro-card__line--md'),
   'fade-in-left',
   'u-hidden'
-);
-const languagesAnimation = new AnimatedElement(
+));
+
+const languagesAnimation = animatedElements.push(new AnimatedElement(
   document.querySelector('.intro-card__line--sm'),
   'fade-in-left',
   'u-hidden'
-);
-const buttonAnimation = new AnimatedElement($button, 'fade-in-top', 'u-hidden');
+));
+const buttonAnimation = animatedElements.push(new AnimatedElement($button, 'fade-in-top', 'u-hidden'));
 
 const terminalMessage = `start "Richard De Avila"`;
 let windowHeight = window.innerHeight;
@@ -45,50 +48,15 @@ let windowHeight = window.innerHeight;
 // this will be used in case we want to kick off an animation deeper into the scroll
 const animationMargin = 100;
 
-let nameTriggered = false;
-let developerTriggered = false;
-let languagesTriggered = false;
-let buttonTriggered = false;
-
 // We have to use a named function in order to have the ability to remove the handler
 function onscroll(e) {
-  //TODO: replace these with preidcates
-  if (
-    !nameTriggered &&
-    nameAnimation.element.getBoundingClientRect().top <
-      windowHeight - animationMargin
-  ) {
-    nameAnimation.animate();
-    nameTriggered = true;
-  }
-  if (
-    !developerTriggered &&
-    developerAnimation.element.getBoundingClientRect().top <
-      windowHeight - animationMargin
-  ) {
-    developerAnimation.animate();
-    developerTriggered = true;
-  }
-  if (
-    !languagesTriggered &&
-    languagesAnimation.element.getBoundingClientRect().top <
-      windowHeight - animationMargin
-  ) {
-    languagesAnimation.animate();
-    languagesTriggered = true;
-  }
-
-  if (
-    !buttonTriggered &&
-    buttonAnimation.element.getBoundingClientRect().top <
-      windowHeight - animationMargin
-  ) {
-    buttonAnimation.animate();
-    buttonTriggered = true;
-  }
-
-  // if the last animation has kicked off, remove the event listener
-  if (buttonTriggered) {
+  animatedElements.forEach((ael, index) => {
+    if (ael.element.getBoundingClientRect().top < windowHeight - animationMargin) {
+      ael.animate();
+      animatedElements.splice(index, 1);
+    }
+  });
+  if(animatedElements.length < 1) {
     document.removeEventListener('scroll', onscroll);
   }
 }
