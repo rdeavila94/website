@@ -8,6 +8,12 @@
 
 @mixin respond($breakpoint) {
 
+  @if $breakpoint == service-break {
+    @media (max-width: 71.25em) {//1140
+      @content;
+    }
+  }
+
   @if $breakpoint == tab-lg {
     @media (max-width: 78em) { //1248 px
       @content;

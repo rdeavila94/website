@@ -5,15 +5,32 @@
   &__top {
     text-align: center;
     font-size: $font-size-header;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     line-height: 8rem;
     font-weight: bold;
+  }
+
+  &__center {
+    display: none;
+
+    @include respond(service-break) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: auto;
+      img {
+        max-height: 35rem;
+      }
+    }
   }
 
   &__bottom {
     margin-top: auto;
     font-size: $font-size-paragraph;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     line-height: 4rem;
+    @include respond(service-break) {
+      text-align: center;
+    }
   }
 }
