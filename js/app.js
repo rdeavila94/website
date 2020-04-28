@@ -50,7 +50,7 @@ const terminalMessage = `start "Richard De Avila"`;
 let windowHeight = window.innerHeight;
 
 // this will be used in case we want to kick off an animation deeper into the scroll
-const animationMargin = 100;
+const animationMargin = 50;
 
 // We have to use a named function in order to have the ability to remove the handler
 function onscroll(e) {
