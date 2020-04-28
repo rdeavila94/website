@@ -46,7 +46,7 @@ document.querySelectorAll('.section-service__content--right .content-box__top').
 })
 
 
-const terminalMessage = `start "Richard De Avila"`;
+const terminalMessage = `init 'Richard De Avila'`;
 let windowHeight = window.innerHeight;
 
 // this will be used in case we want to kick off an animation deeper into the scroll
