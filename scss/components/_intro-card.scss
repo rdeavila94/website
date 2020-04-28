@@ -8,12 +8,21 @@
     }
     &--big {
       font-size: $font-size-header;
+      @include respond(intro-break) {
+        font-size: 5rem;
+      }
     }
     &--md {
       font-size: $font-size-large;
+      @include respond(intro-break) {
+        font-size: 4rem;
+      }
     }
     &--sm {
       font-size: $font-size-paragraph;
+      @include respond(intro-break) {
+        font-size: 3.5rem;
+      }
     }
   }
 }

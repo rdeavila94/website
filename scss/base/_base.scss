@@ -16,6 +16,14 @@ html {
     font-size: 57%;
   }
 
+  @include respond(phone) {
+    font-size: 50%;
+  }
+
+  @include respond(tight) {
+    font-size: 47.5%;
+  }
+
   @include respond(desktop-lg) {
     font-size: 65%;
   }
@@ -32,6 +40,12 @@ body {
       padding-left: 5rem;
       padding-right: 5rem;
     }
+
+    @include respond(tab) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
     &:not(:last-of-type) {
       padding-top: 10rem;
       padding-bottom: 10rem;
@@ -39,10 +53,14 @@ body {
         padding-top: 5rem;
         padding-bottom: 5rem;
       }
+      
     }
     &:last-of-type {
       padding-top: 5rem;
       padding-bottom: 5rem;
+      @include respond(tab) {
+        padding-bottom: 1rem;
+      }
     }
   }
 }

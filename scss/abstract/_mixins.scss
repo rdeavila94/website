@@ -8,6 +8,24 @@
 
 @mixin respond($breakpoint) {
 
+  @if $breakpoint == intro-break {
+    @media (max-width: 31em) { //496
+      @content;
+    }
+  }
+
+  @if $breakpoint == tight {
+    @media (max-width: 32.5em) { //520
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media (max-width: 41em) { //656 px
+      @content;
+    }
+  }
+
   @if $breakpoint == tab {
     @media (max-width: 62em) { //992 px
       @content;

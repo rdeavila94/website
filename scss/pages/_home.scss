@@ -120,6 +120,9 @@
     display: flex;
     flex-basis: 50%;
     flex-direction: column;
+    @include respond(tab) {
+      text-align: center;
+    }
   }
 
   &__contact {
@@ -150,7 +153,7 @@
     flex-direction: row;
     flex: 1;
     justify-content: flex-end;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 5rem;
     @include respond(tab) {
       margin-top: 3rem;

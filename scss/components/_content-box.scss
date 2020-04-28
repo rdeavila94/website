@@ -8,11 +8,15 @@
     letter-spacing: 0.1rem;
     line-height: 8rem;
     font-weight: bold;
+    @include respond(tight) {
+      font-size: $font-size-tight-lg;
+      line-height: 5rem;
+    }
   }
 
   &__center {
     display: none;
-
+    padding: 1rem 0;
     @include respond(service-break) {
       display: flex;
       flex-direction: row;
@@ -31,6 +35,10 @@
     line-height: 4rem;
     @include respond(service-break) {
       text-align: center;
+    }
+    @include respond(tight) {
+      font-size: $font-size-tight-md;
+      line-height: 3.5rem;
     }
   }
 }
