@@ -112,6 +112,10 @@
   color: $color-white;
   font-family: $font-primary;
 
+  @include respond(tab) {
+    flex-direction: column;
+  }
+
   &__about {
     display: flex;
     flex-basis: 50%;
@@ -122,6 +126,9 @@
     display: flex;
     flex-basis: 50%;
     flex-direction: column;
+    @include respond(tab) {
+      margin-top: 3rem;
+    }
   }
 
   &__header {
@@ -133,6 +140,9 @@
     margin-top: 3rem;
     font-size: $font-size-small;
     display: flex;
+    @include respond(tab) {
+      margin-top: 1rem;
+    }
   }
 
   &__copyright {
@@ -142,5 +152,8 @@
     justify-content: flex-end;
     font-size: 1.5rem;
     margin-top: 5rem;
+    @include respond(tab) {
+      margin-top: 3rem;
+    }
   }
 }
