@@ -114,7 +114,7 @@ function pressEnter($line) {
 
 setTimeout(
   () =>
-    textAnimation({ el: $terminal, content: terminalMessage, speed: 10 }, () =>
+    textAnimation({ el: $terminal, content: terminalMessage, speed: 50 }, () =>
       setTimeout(() => {
         pressEnter($terminal);
         setTimeout(() => smoothScroll($body), 250);
