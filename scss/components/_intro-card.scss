@@ -19,7 +19,7 @@
       }
     }
     &--sm {
-      font-size: $font-size-paragraph;
+      font-size: $font-size-tight-lg;
       @include respond(intro-break) {
         font-size: 3.5rem;
       }
