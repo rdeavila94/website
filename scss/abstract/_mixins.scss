@@ -7,50 +7,15 @@
 }
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == tight {
-    @media (max-width: 28.75em) {
+
+  @if $breakpoint == tab-lg {
+    @media (max-width: 78em) { //1248 px
       @content;
     }
   }
 
-  @if $breakpoint == phone {
-    @media (max-width: 35em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == sub-header-break {
-    @media (max-width: 47.375em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == tab-port {
-    @media (max-width: 56.25em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == title-break {
-    @media (max-width: 62.5em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == poststamp-break {
-    @media (max-width: 71.56em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == tab-land {
-    @media (max-width: 75em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == img-break {
-    @media (max-width: 93.125em) {
+  @if $breakpoint == depad {
+    @media (max-width: 84.5em) { // 1348 px
       @content;
     }
   }

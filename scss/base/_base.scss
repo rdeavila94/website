@@ -11,6 +11,14 @@
 html {
   //This essentially defines what one rem is, which is 10px
   font-size: 62.5%;
+
+  @include respond(tab-lg) {
+    font-size: 57%;
+  }
+
+  @include respond(desktop-lg) {
+    font-size: 65%;
+  }
 }
 
 body {
@@ -20,9 +28,17 @@ body {
   & > div[class^="section-"] {
     padding-left: 10rem;
     padding-right: 10rem;
+    @include respond(depad) {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
     &:not(:last-of-type) {
       padding-top: 10rem;
       padding-bottom: 10rem;
+      @include respond(depad) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
     }
     &:last-of-type {
       padding-top: 5rem;
