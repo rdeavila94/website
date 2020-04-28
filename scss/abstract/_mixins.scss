@@ -26,6 +26,18 @@
     }
   }
 
+  @if $breakpoint == terminal-tight {
+    @media (max-width: 47em) { //752 px
+      @content;
+    }
+  }
+
+  @if $breakpoint == terminal-break {
+    @media (max-width: 56.25em) {//900 px
+      @content;
+    }
+  }
+
   @if $breakpoint == tab {
     @media (max-width: 62em) { //992 px
       @content;

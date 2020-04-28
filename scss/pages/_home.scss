@@ -7,6 +7,17 @@
     font-family: $font-terminal;
     letter-spacing: 0.1rem;
     font-size: $font-size-header;
+    @include respond(terminal-break) {
+      font-size: $font-size-large;
+    }
+
+    @include respond(terminal-tight) {
+      font-size: $font-size-tight-lg;
+    }
+
+    @include respond(tight) {
+      font-size: 2.9rem;
+    }
   }
 }
 
