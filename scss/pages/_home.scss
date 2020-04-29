@@ -1,6 +1,5 @@
 .section-header {
   min-height: 100vh;
-  min-width: 100vw;
   background-color: rgba($color-black, 0.9);
   color: $color-white;
   &__terminal {
@@ -22,7 +21,6 @@
 }
 
 .section-intro {
-  min-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -74,7 +72,6 @@
 }
 
 .section-service {
-  min-width: 100vw;
   min-height: 100vh;
   color: $color-white;
   display: flex;
