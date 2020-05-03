@@ -1,24 +1,51 @@
-//TODO: Neaten this button
 .btn {
-  border-radius: 2rem;
   display: inline-block;
   font-family: $font-primary;
   cursor: pointer;
-  transition: all .2s;
-  &:active {
-    box-shadow: 0 0rem 1rem .1rem rgba($color-grey, 0.5) inset;
+  position: relative;
+
+  &__content {
+    background-color: transparent;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
+    padding: 2rem 5rem;
+    &:hover {
+      color: black;
+      &::before {
+        top: 100%;
+      }
+    }
+    &::before {
+      transition: all .2s;
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
   }
 
-  &--large {
-    padding: 2rem 5rem;
-  }
-  &--black {
-    background-color: $color-black;
-    color: white;
-    border: 1px black solid;
-    &:hover {
-      background-color: $color-white;
-      color: $color-black;
+  &:hover {
+    &::after {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
+  }
+
+  &::after {
+    transition: all .2s;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    content: '';
+    height: .5rem;
+    width: 100%;
+    background-color: black;
+    border-radius: 1rem;
+    clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
   }
 }
