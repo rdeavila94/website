@@ -91,10 +91,6 @@
     @include respond(service-break) {
       flex-basis: 100%;
     }
-
-    &--right {
-      text-align: right;
-    }
   }
 
   &__image {
