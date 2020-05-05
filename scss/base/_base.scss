@@ -45,6 +45,11 @@ body {
       padding-right: 1rem;
     }
 
+    @include respond(phone) {
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+
     &:not(:last-of-type) {
       padding-top: 10rem;
       padding-bottom: 10rem;
