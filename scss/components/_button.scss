@@ -5,47 +5,19 @@
   position: relative;
 
   &__content {
-    background-color: transparent;
+    background-color: black;
     color: white;
     position: relative;
     overflow: hidden;
     border-radius: 2rem;
     padding: 2rem 5rem;
+    border: solid 1px black;
+    transition: all .3s;
+    box-shadow: 0 0 1rem rgba($color-black, 0.8);
     &:hover {
       color: black;
-      &::before {
-        top: 100%;
-      }
+      background-color: white;
+      box-shadow: none;
     }
-    &::before {
-      transition: all .2s;
-      position: absolute;
-      content: '';
-      height: 100%;
-      width: 100%;
-      background-color: black;
-      z-index: -1;
-      top: 0;
-      left: 0;
-    }
-  }
-
-  &:hover {
-    &::after {
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    }
-  }
-
-  &::after {
-    transition: all .2s;
-    position: absolute;
-    bottom: -1rem;
-    left: 0;
-    content: '';
-    height: .5rem;
-    width: 100%;
-    background-color: black;
-    border-radius: 1rem;
-    clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
   }
 }
