@@ -25,13 +25,6 @@ const $service = document.querySelector('#service-start');
 
 const animatedElements = [];
 
-animatedElements.push(new AnimatedElement(
-  document.querySelector('.intro-card'),
-  'fade-in-left',
-  'u-hidden'
-));
-
-animatedElements.push(new AnimatedElement($button, 'fade-in-top', 'u-hidden'));
 
 document.querySelectorAll('.content-box__bottom').forEach(el => {
   animatedElements.push(new AnimatedElement(el, 'shoot-up', 'u-hidden'));
