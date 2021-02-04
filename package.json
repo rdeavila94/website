@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Richard DeAvila's website",
   "main": "index.js",
+  "homepage": "https://rdeavila94.github.io/website",
   "scripts": {
     "watch:sass": "node-sass scss/styles.scss css/style.css -w",
     "watch:js": "babel js/app.js -w -o lib/app.js",
